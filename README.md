@@ -19,5 +19,8 @@ NEXT UP
 
 
 LOG
+--- Saturday July 10 ---
+- Wrote most of the logic.
+
 --- Thursday July 8 ---
 - Created repository.
