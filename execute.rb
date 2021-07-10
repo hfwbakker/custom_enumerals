@@ -55,3 +55,7 @@ puts "\n"
 
 
 # INJECT VS MY_INJECT
+print("inject vs my_inject: \n")
+p numbers.inject {|sum, number| sum + number}
+p numbers.my_inject {|sum, number| sum + number}
+puts "\n"

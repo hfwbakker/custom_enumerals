@@ -1,10 +1,15 @@
 require_relative "enumerables.rb"
 
 module Enumerable
-  def my_map
-    result = []
-    my_each { |i| result.append yield i }
-    return result
+  def my_inject
+    result = self[0]
+
+    self.my_each_with_index do |ele, index| 
+      next if index == 0  
+      result = yield(ele, result)
+    end
+
+    result
   end
 end
 
@@ -12,8 +17,9 @@ words = ["bal", "pik", "hap", "abcdefghij", "stok"]
 numbers = [1, 2, 3, 4, 5, 6]
 
 
-p numbers.map { |num| num * 3 }
-p numbers.my_map { |num| num * 3 }
+p numbers.inject {|sum, number| sum + number}
+p numbers.my_inject {|sum, number| sum + number}
+
 
 
 # if
